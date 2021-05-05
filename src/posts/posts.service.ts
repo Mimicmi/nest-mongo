@@ -22,14 +22,14 @@ export class PostsService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} post`;
+    return this.postModel.findById(id).populate('author');
   }
 
   update(id: number, updatePostDto: UpdatePostDto) {
-    return `This action updates a #${id} post`;
+    return this.postModel.findByIdAndUpdate(id, UpdatePostDto, { new: true });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} post`;
+    return this.postModel.findByIdAndRemove(id);
   }
 }
