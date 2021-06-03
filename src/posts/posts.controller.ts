@@ -7,7 +7,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
 
-@UseGuards(AuthGuard())
+// @UseGuards(AuthGuard())
 @Controller('posts')
 export class PostsController {
   constructor(private readonly postsService: PostsService) { }
